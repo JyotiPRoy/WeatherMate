@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19455" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19455"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ghk-16-4YZ">
+                    <rect key="frame" x="10" y="20" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="6Da-cf-Q9A"/>
+                        <constraint firstAttribute="height" constant="35" id="Rbw-0H-f6n"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Partially Cloudy" id="1aM-MN-OHc"/>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gIQ-xK-bUg">
+                    <rect key="frame" x="11" y="0.0" width="33" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="6MA-NY-5EP"/>
+                    </constraints>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="26th" id="yN5-tG-pVf">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="ghk-16-4YZ" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="7If-NX-4nE"/>
+                <constraint firstItem="ghk-16-4YZ" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="10" id="EWt-Us-tAb"/>
+                <constraint firstAttribute="trailing" secondItem="gIQ-xK-bUg" secondAttribute="trailing" constant="13" id="TFY-Vc-cxc"/>
+                <constraint firstItem="gIQ-xK-bUg" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="13" id="WKy-aA-q1D"/>
+                <constraint firstAttribute="bottom" secondItem="gIQ-xK-bUg" secondAttribute="bottom" id="oxk-17-WbF"/>
+                <constraint firstAttribute="trailing" secondItem="ghk-16-4YZ" secondAttribute="trailing" constant="10" id="ucF-T0-ybm"/>
+            </constraints>
+            <point key="canvasLocation" x="140" y="154"/>
+        </customView>
+        <collectionViewItem id="fT3-Zx-zXH" customClass="WeatherCell" customModule="WeatherMate" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="c22-O7-iKe" id="ar1-Lf-hCz"/>
+                <outlet property="weatherCellDate" destination="gIQ-xK-bUg" id="1lq-ua-8sL"/>
+                <outlet property="weatherCellImage" destination="ghk-16-4YZ" id="Cdm-fb-1RJ"/>
+            </connections>
+        </collectionViewItem>
+    </objects>
+    <resources>
+        <image name="Partially Cloudy" width="128" height="128"/>
+    </resources>
+</document>

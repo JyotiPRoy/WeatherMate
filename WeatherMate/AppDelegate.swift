@@ -10,11 +10,14 @@ import Cocoa
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    
-
+    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+    var popOver: NSPopover?
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        // Placeholder for when there's no data
+        statusItem.button?.title = "28°C"   //FIXME change back to --°
+        statusItem.button?.action = #selector(AppDelegate.displayPopUp(_:))
+        WeatherService.instance.getWeatherDetails()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -25,6 +28,30 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return true
     }
 
+    @objc func displayPopUp(_ sender: AnyObject?) {
+        let storyboard = NSStoryboard(name: "Main", bundle: nil)
+        guard let viewController = storyboard.instantiateController(withIdentifier: "WeatherViewController")
+                as? NSViewController else { return }
+        popOver = popOver ??  NSPopover()
+        popOver?.contentViewController = viewController
+        popOver?.behavior = .transient
+        popOver?.animates = true
+        popOver?.show(relativeTo: statusItem.button!.bounds, of: statusItem.button!, preferredEdge: .maxY)
+        NSApp.activate(ignoringOtherApps: true) // Useful for click-outside-to-dismiss
+    }
+    
+    func applicationWillResignActive(_ notification: Notification) {
+        // To detect when user clicks outside the popup, to dismiss it.
+        popOver?.close()
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentContainer = {
