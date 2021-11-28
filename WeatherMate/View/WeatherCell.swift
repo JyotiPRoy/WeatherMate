@@ -18,4 +18,9 @@ class WeatherCell: NSCollectionViewItem {
         // Do view setup here.
         
     }
+    
+    func configureCell(forecast: WeatherForecast) {
+        weatherCellDate.stringValue = forecast.date
+        weatherCellImage.image = NSImage(named: forecast.weatherType) //FIXME: -_-
+    }
 }

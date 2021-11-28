@@ -15,9 +15,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Placeholder for when there's no data
-        statusItem.button?.title = "28°C"   //FIXME change back to --°
+        statusItem.button?.title = "--°"
         statusItem.button?.action = #selector(AppDelegate.displayPopUp(_:))
-        WeatherService.instance.getWeatherDetails()
+        
+        //TODO: CoreData also has to be handled, save user prefs, cache weather data etc.
+        
+        WeatherService.instance.getWeatherDetails {
+            DispatchQueue.main.async {
+                self.statusItem.button?.title = "\(WeatherService.instance.currentWeather.currentTemp)°C"
+            }
+        }
+        WeatherService.instance.getWeatherForecast {
+            print("HLT: \(WeatherService.instance.highLowToday[1])")
+        }
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

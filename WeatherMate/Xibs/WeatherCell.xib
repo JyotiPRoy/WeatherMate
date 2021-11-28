@@ -21,11 +21,11 @@
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Partially Cloudy" id="1aM-MN-OHc"/>
                 </imageView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gIQ-xK-bUg">
-                    <rect key="frame" x="11" y="0.0" width="33" height="16"/>
+                    <rect key="frame" x="14" y="0.0" width="27" height="16"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="16" id="6MA-NY-5EP"/>
+                        <constraint firstAttribute="height" constant="16" id="8H9-kc-018"/>
                     </constraints>
-                    <textFieldCell key="cell" lineBreakMode="clipping" title="26th" id="yN5-tG-pVf">
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Tue" id="yN5-tG-pVf">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -33,11 +33,11 @@
                 </textField>
             </subviews>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="gIQ-xK-bUg" secondAttribute="bottom" id="1uQ-SH-1E9"/>
                 <constraint firstItem="ghk-16-4YZ" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="7If-NX-4nE"/>
+                <constraint firstItem="gIQ-xK-bUg" firstAttribute="top" secondItem="ghk-16-4YZ" secondAttribute="bottom" constant="4" id="CZM-Nv-b9W"/>
                 <constraint firstItem="ghk-16-4YZ" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="10" id="EWt-Us-tAb"/>
-                <constraint firstAttribute="trailing" secondItem="gIQ-xK-bUg" secondAttribute="trailing" constant="13" id="TFY-Vc-cxc"/>
-                <constraint firstItem="gIQ-xK-bUg" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="13" id="WKy-aA-q1D"/>
-                <constraint firstAttribute="bottom" secondItem="gIQ-xK-bUg" secondAttribute="bottom" id="oxk-17-WbF"/>
+                <constraint firstItem="gIQ-xK-bUg" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="16" id="h9e-wM-OCU"/>
                 <constraint firstAttribute="trailing" secondItem="ghk-16-4YZ" secondAttribute="trailing" constant="10" id="ucF-T0-ybm"/>
             </constraints>
             <point key="canvasLocation" x="140" y="154"/>
